@@ -45,7 +45,7 @@ function reducerFunction(state, action){
 		default:
 			console.log("Sorry! not to 'ADD' return default state");
 	}
-	
+
 	return state;
 }
 
@@ -54,11 +54,6 @@ function reducerFunction(state, action){
 /***
 Default State
 ***/
-let defaultState = {
-	add: 0,
-	sub: 0,
-	mul: 1,
-	div: 1
-};
+let defaultState = [];
 
 
