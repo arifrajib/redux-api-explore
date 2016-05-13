@@ -28,3 +28,20 @@ function popActionCreator(){
 
 
 
+/***
+Reducer Function
+***/
+function pushReducer(state, action){
+	console.log("inside 'pushReducer' function");
+	if(action.type === PUSH_ACTION){
+		console.log("yes! we can push item and return the new state");
+		state.push(action.item);
+	}
+	else{
+		console.log("Sorry! not to 'ADD' return default state");
+	}
+	return state;
+}
+
+
+
