@@ -57,3 +57,11 @@ Default State
 let defaultState = [];
 
 
+/***
+Create Store
+***/
+let store = createStore(reducerFunction, defaultState);
+
+console.log("Store created: ", store);
+
+
