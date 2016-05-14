@@ -5,7 +5,7 @@ import {createStore} from 'redux';
 Define Action Type
 ***/
 const PUSH_ACTION = 'PUSH';
-const POP_ACTION = 'POP';
+const POP_ACTION  = 'POP';
 
 
 /***
@@ -40,10 +40,10 @@ function reducerFunction(state, action){
 			state.push(action.item);
 			break;
 		case POP_ACTION:
-			console.log("]we can pop item and return the new state");
+			console.log("we can pop item and return the new state");
 			state.pop();
 		default:
-			console.log("Sorry! not to 'ADD' return default state");
+			console.log("Sorry! nothing to push or pop return default state");
 	}
 
 	return state;
@@ -62,6 +62,18 @@ Create Store
 ***/
 let store = createStore(reducerFunction, defaultState);
 
-console.log("Store created: ", store);
+console.log("Default Store created: ", store);
+
+/**
+push Item with dispatching PUSH_ACTION
+**/
+store.dispatch(pushActionCreator("Push Item 1"));
+console.log("Push Item 1: ", store);
+
+
+store.dispatch(pushActionCreator("Push Item 2"));
+console.log("Push Item 2: ", store);
+
+
 
 
