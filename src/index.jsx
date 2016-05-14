@@ -42,6 +42,7 @@ function reducerFunction(state, action){
 		case POP_ACTION:
 			console.log("we can pop item and return the new state");
 			state.pop();
+			break;
 		default:
 			console.log("Sorry! nothing to push or pop return default state");
 	}
@@ -62,18 +63,26 @@ Create Store
 ***/
 let store = createStore(reducerFunction, defaultState);
 
-console.log("Default Store created: ", store);
+console.log("Default Store created: ", store.getState());
 
 /**
 push Item with dispatching PUSH_ACTION
 **/
 store.dispatch(pushActionCreator("Push Item 1"));
-console.log("Push Item 1: ", store);
+console.log("Push Item 1: ", store.getState());
 
 
 store.dispatch(pushActionCreator("Push Item 2"));
-console.log("Push Item 2: ", store);
+console.log("Push Item 2: ", store.getState());
+
+
+store.dispatch(pushActionCreator("Push Item 3"));
+console.log("Push Item 3: ", store.getState());
 
 
 
-
+/**
+pop Item with dispatching POP_ACTION
+**/
+store.dispatch(popActionCreator());
+console.log("Item poped: ", store.getState());
