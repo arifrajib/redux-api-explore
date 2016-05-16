@@ -65,19 +65,26 @@ let store = createStore(reducerFunction, defaultState);
 
 console.log("Default Store created: ", store.getState());
 
+
+/***
+Subscribe listener
+***/
+let unSubscribe = store.subscribe(()=> console.log(store.getState()));
+
+
 /**
 push Item with dispatching PUSH_ACTION
 **/
 store.dispatch(pushActionCreator("Push Item 1"));
-console.log("Push Item 1: ", store.getState());
+console.log("Push Item 1");
 
 
 store.dispatch(pushActionCreator("Push Item 2"));
-console.log("Push Item 2: ", store.getState());
+console.log("Push Item 2");
 
 
 store.dispatch(pushActionCreator("Push Item 3"));
-console.log("Push Item 3: ", store.getState());
+console.log("Push Item 3");
 
 
 
@@ -85,4 +92,4 @@ console.log("Push Item 3: ", store.getState());
 pop Item with dispatching POP_ACTION
 **/
 store.dispatch(popActionCreator());
-console.log("Item poped: ", store.getState());
+console.log("Item poped");
