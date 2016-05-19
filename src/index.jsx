@@ -46,6 +46,23 @@ function pushReducerFunction(state, action){
 }
 
 
+/***
+Pop Reducer Function
+***/
+function popReducerFunction(state, action){
+	console.log("inside 'Pop Reducer' function");
+	
+	if(action.type === POP_ACTION){
+		console.log("we can pop item and return the new state");
+		state.pop();
+	}
+	else{
+		console.log("Sorry! nothing to pop");
+	}
+
+	return state;
+}
+
 
 /***
 combineReducers
