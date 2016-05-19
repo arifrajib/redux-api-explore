@@ -1,4 +1,4 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
 
 
 /***
@@ -49,6 +49,13 @@ function reducerFunction(state, action){
 
 	return state;
 }
+
+
+/***
+combineReducers
+***/
+lat reducerFunction = combineReducers({});
+
 
 
 
