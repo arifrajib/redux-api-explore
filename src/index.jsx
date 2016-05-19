@@ -29,26 +29,22 @@ function popActionCreator(){
 
 
 /***
-Reducer Function
+Push Reducer Function
 ***/
-function reducerFunction(state, action){
-	console.log("inside 'Reducer' function");
+function pushReducerFunction(state, action){
+	console.log("inside 'Push Reducer' function");
 	
-	switch(action.type){
-		case PUSH_ACTION:
-			console.log("we can push item and return the new state");
-			state.push(action.item);
-			break;
-		case POP_ACTION:
-			console.log("we can pop item and return the new state");
-			state.pop();
-			break;
-		default:
-			console.log("Sorry! nothing to push or pop return default state");
+	if(action.type === PUSH_ACTION){
+		console.log("we can push item and return the new state");
+		state.push(action.item);
+	}
+	else{
+		console.log("Sorry! nothing to push");
 	}
 
 	return state;
 }
+
 
 
 /***
