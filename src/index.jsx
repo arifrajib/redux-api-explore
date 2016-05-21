@@ -29,35 +29,22 @@ function popActionCreator(){
 
 
 /***
-Push Reducer Function
+Stack Reducer Function
 ***/
-function pushReducerFunction(state, action){
-	console.log("inside 'Push Reducer' function");
+function stackReducerFunction(state=[], action){
+	console.log("inside 'Push Pop Reducer' function");
 	
-	if(action.type === PUSH_ACTION){
-		console.log("we can push item and return the new state");
-		state.push(action.item);
-	}
-	else{
-		console.log("Sorry! nothing to push");
-	}
-
-	return state;
-}
-
-
-/***
-Pop Reducer Function
-***/
-function popReducerFunction(state, action){
-	console.log("inside 'Pop Reducer' function");
-	
-	if(action.type === POP_ACTION){
-		console.log("we can pop item and return the new state");
-		state.pop();
-	}
-	else{
-		console.log("Sorry! nothing to pop");
+	switch(action.type){
+		case PUSH_ACTION:
+			console.log("we can push item and return the new state");
+			state.push(action.item);
+			break;
+		case POP_ACTION:
+			console.log("we can pop item and return the new state");
+			state.pop();
+			break;
+		default:
+			console.log("Sorry! nothing to push or pop return default state");
 	}
 
 	return state;
@@ -67,7 +54,9 @@ function popReducerFunction(state, action){
 /***
 combineReducers
 ***/
-lat reducerFunction = combineReducers({});
+let reducerFunction = combineReducers({
+	stackReducerFunction
+});
 
 
 
@@ -75,7 +64,7 @@ lat reducerFunction = combineReducers({});
 /***
 Default State
 ***/
-let defaultState = [];
+let defaultState = {};
 
 
 /***
