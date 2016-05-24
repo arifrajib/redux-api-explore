@@ -79,7 +79,8 @@ function queueReducerFunction(state=[], action){
 combineReducers
 ***/
 let reducerFunction = combineReducers({
-	stackReducerFunction
+	stackReducerFunction,
+	queueReducerFunction
 });
 
 
