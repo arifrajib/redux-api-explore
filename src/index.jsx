@@ -36,15 +36,15 @@ function stackReducerFunction(state=[], action){
 	
 	switch(action.type){
 		case PUSH_ACTION:
-			console.log("we can push item and return the new state");
+			console.log("we can push item to Stack");
 			state.push(action.item);
 			break;
 		case POP_ACTION:
-			console.log("we can pop item and return the new state");
+			console.log("we can pop item to Stack");
 			state.pop();
 			break;
 		default:
-			console.log("Sorry! nothing to push or pop return default state");
+			console.log("Sorry! nothing to push or pop to Stack");
 	}
 
 	return state;
@@ -59,15 +59,15 @@ function queueReducerFunction(state=[], action){
 	
 	switch(action.type){
 		case PUSH_ACTION:
-			console.log("we can push item and return the new state");
+			console.log("we can push item to Queue");
 			state.shift(action.item);
 			break;
 		case POP_ACTION:
-			console.log("we can pop item and return the new state");
+			console.log("we can pop item to Queue");
 			state.unshift();
 			break;
 		default:
-			console.log("Sorry! nothing to push or pop return default state");
+			console.log("Sorry! nothing to push or pop to Queue");
 	}
 
 	return state;
