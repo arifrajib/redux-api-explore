@@ -31,46 +31,46 @@ function popActionCreator(){
 /***
 Stack Reducer Function
 ***/
-function stackReducerFunction(state=[], action){
-	console.log("inside 'Stack Reducer' function");
+function stackReducerFunction(stack=[], action){
+	console.log("inside 'Stack Reducer' function ", action.type);
 	
 	switch(action.type){
 		case PUSH_ACTION:
 			console.log("we can push item to Stack");
-			state.push(action.item);
+			stack.push(action.item);
 			break;
 		case POP_ACTION:
 			console.log("we can pop item to Stack");
-			state.pop();
+			stack.pop();
 			break;
 		default:
 			console.log("Sorry! nothing to push or pop to Stack");
 	}
 
-	return state;
+	return stack;
 }
 
 
 /***
 Queue Reducer Function
 ***/
-function queueReducerFunction(state=[], action){
-	console.log("inside 'Queue Reducer' function");
+function queueReducerFunction(queue=[], action){
+	console.log("inside 'Queue Reducer' function ", action.type);
 	
 	switch(action.type){
 		case PUSH_ACTION:
 			console.log("we can push item to Queue");
-			state.shift(action.item);
+			queue.push(action.item);
 			break;
 		case POP_ACTION:
 			console.log("we can pop item to Queue");
-			state.unshift();
+			queue.shift();
 			break;
 		default:
 			console.log("Sorry! nothing to push or pop to Queue");
 	}
 
-	return state;
+	return queue;
 }
 
 
@@ -79,8 +79,8 @@ function queueReducerFunction(state=[], action){
 combineReducers
 ***/
 let reducerFunction = combineReducers({
-	stackReducerFunction,
-	queueReducerFunction
+	stack: stackReducerFunction,
+	queue: queueReducerFunction
 });
 
 
@@ -109,21 +109,23 @@ let unSubscribe = store.subscribe(()=> console.log(store.getState()));
 /**
 push Item with dispatching PUSH_ACTION
 **/
-store.dispatch(pushActionCreator("Push Item 1"));
 console.log("Push Item 1");
+store.dispatch(pushActionCreator("Push Item 1"));
 
 
-store.dispatch(pushActionCreator("Push Item 2"));
 console.log("Push Item 2");
+store.dispatch(pushActionCreator("Push Item 2"));
 
 
-store.dispatch(pushActionCreator("Push Item 3"));
 console.log("Push Item 3");
+store.dispatch(pushActionCreator("Push Item 3"));
+
 
 
 
 /**
 pop Item with dispatching POP_ACTION
 **/
-store.dispatch(popActionCreator());
-console.log("Item poped");
+console.log("Item Pop");
+//store.dispatch(popActionCreator());
+
