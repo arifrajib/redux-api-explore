@@ -32,7 +32,7 @@ function popActionCreator(){
 Stack Reducer Function
 ***/
 function stackReducerFunction(state=[], action){
-	console.log("inside 'Push Pop Reducer' function");
+	console.log("inside 'Stack Reducer' function");
 	
 	switch(action.type){
 		case PUSH_ACTION:
@@ -49,6 +49,30 @@ function stackReducerFunction(state=[], action){
 
 	return state;
 }
+
+
+/***
+Queue Reducer Function
+***/
+function queueReducerFunction(state=[], action){
+	console.log("inside 'Queue Reducer' function");
+	
+	switch(action.type){
+		case PUSH_ACTION:
+			console.log("we can push item and return the new state");
+			state.shift(action.item);
+			break;
+		case POP_ACTION:
+			console.log("we can pop item and return the new state");
+			state.unshift();
+			break;
+		default:
+			console.log("Sorry! nothing to push or pop return default state");
+	}
+
+	return state;
+}
+
 
 
 /***
