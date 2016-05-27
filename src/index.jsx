@@ -29,7 +29,7 @@ function pushActionCreator(type, item){
 	};
 }
 
-function popActionCreator(){
+function popActionCreator(type){
 	console.log("Creating Pop Action inside 'popActionCreator'");
 	return {
 		type: (type === "queue")? QUEUE_POP_ACTION : STACK_POP_ACTION,
@@ -47,11 +47,11 @@ function stackReducerFunction(stack=[], action){
 	console.log("inside 'Stack Reducer' function ", action.type);
 	
 	switch(action.type){
-		case PUSH_ACTION:
+		case STACK_PUSH_ACTION:
 			console.log("we can push item to Stack");
 			stack.push(action.item);
 			break;
-		case POP_ACTION:
+		case STACK_POP_ACTION:
 			console.log("we can pop item to Stack");
 			stack.pop();
 			break;
@@ -70,11 +70,11 @@ function queueReducerFunction(queue=[], action){
 	console.log("inside 'Queue Reducer' function ", action.type);
 	
 	switch(action.type){
-		case PUSH_ACTION:
+		case QUEUE_PUSH_ACTION:
 			console.log("we can push item to Queue");
 			queue.push(action.item);
 			break;
-		case POP_ACTION:
+		case QUEUE_POP_ACTION:
 			console.log("we can pop item to Queue");
 			queue.shift();
 			break;
@@ -121,23 +121,24 @@ let unSubscribe = store.subscribe(()=> console.log(store.getState()));
 /**
 push Item with dispatching PUSH_ACTION
 **/
-console.log("Push Item 1");
-store.dispatch(pushActionCreator("Push Item 1"));
+console.log("Push Item 1 to Stack");
+store.dispatch(pushActionCreator("stack", "Stack 1"));
 
 
-console.log("Push Item 2");
-store.dispatch(pushActionCreator("Push Item 2"));
+console.log("Push Item 1 to Queue");
+store.dispatch(pushActionCreator("queue", "Queue 1"));
 
 
-console.log("Push Item 3");
-store.dispatch(pushActionCreator("Push Item 3"));
+console.log("Push Item 2 to Stack");
+store.dispatch(pushActionCreator("stack" ,"Stack 2"));
 
-
+console.log("Push Item 2 to Queue");
+store.dispatch(pushActionCreator("queue", "Queue 2"));
 
 
 /**
 pop Item with dispatching POP_ACTION
 **/
-console.log("Item Pop");
+//console.log("Item Pop");
 //store.dispatch(popActionCreator());
 
