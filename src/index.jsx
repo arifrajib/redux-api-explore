@@ -21,20 +21,22 @@ const QUEUE_POP_ACTION  = 'QUEUE_POP';
 /***
 Define Action Creator
 ***/
-function pushActionCreator(item){
+function pushActionCreator(type, item){
 	console.log("Creating Push Action inside 'pushActionCreator'");
 	return {
-		type: PUSH_ACTION,
+		type: (type === "queue")? QUEUE_PUSH_ACTION : STACK_PUSH_ACTION,
 		item
 	};
 }
 
 function popActionCreator(){
-	console.log("Creating Push Action inside 'popActionCreator'");
+	console.log("Creating Pop Action inside 'popActionCreator'");
 	return {
-		type: POP_ACTION
+		type: (type === "queue")? QUEUE_POP_ACTION : STACK_POP_ACTION,
 	};
 }
+
+
 
 
 
