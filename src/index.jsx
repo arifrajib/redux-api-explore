@@ -1,11 +1,21 @@
 import {createStore, combineReducers} from 'redux';
 
 
+
+
 /***
-Define Action Type
+Define Stack Action Type
 ***/
-const PUSH_ACTION = 'PUSH';
-const POP_ACTION  = 'POP';
+const STACK_PUSH_ACTION = 'STACK_PUSH';
+const STACK_POP_ACTION  = 'STACK_POP';
+
+
+/***
+Define Queue Action Type
+***/
+const QUEUE_PUSH_ACTION = 'QUEUE_PUSH';
+const QUEUE_POP_ACTION  = 'QUEUE_POP';
+
 
 
 /***
