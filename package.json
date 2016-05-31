@@ -31,8 +31,7 @@
   "homepage": "https://github.com/arifrajib/redux-api-explore#readme",
   "dependencies": {
     "redux": "^3.0.4",
-    "react-redux": "^4.0.0",
-    "immutable": "^3.7.5"
+    "react-redux": "^4.0.0"
   },
   "devDependencies": {
     "webpack": "^1.12.6",
