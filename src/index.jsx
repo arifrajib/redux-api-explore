@@ -137,8 +137,17 @@ store.dispatch(pushActionCreator("queue", "Queue 2"));
 
 
 /**
-pop Item with dispatching POP_ACTION
+Pop Item with dispatching action
 **/
-//console.log("Item Pop");
-//store.dispatch(popActionCreator());
+console.log("Pop Item from Stack");
+store.dispatch(popActionCreator("stack"));
 
+console.log("Pop Item from Queue");
+store.dispatch(popActionCreator("queue"));
+
+
+
+/***
+UnSubscribe Store subscription
+***/
+unSubscribe();
