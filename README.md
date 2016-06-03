@@ -34,7 +34,7 @@ Now you can edit `src/index.jsx` and exploring the Redux API
 * [babel-loader](https://github.com/babel/babel-loader)
 * [react-hot-loader](https://github.com/gaearon/react-hot-loader)
 * babel-preset-es2015
-* [babel-preset-react](babel-preset-react)
+* babel-preset-react
 * [http-server](http-server)
 
 ### Resources
